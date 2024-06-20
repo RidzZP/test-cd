@@ -40,6 +40,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
-        port: 2111
+        port: 22
         source: "build/*"
         target: "/home/jaja/test-cd-react/"
