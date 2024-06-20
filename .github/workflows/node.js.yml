@@ -29,7 +29,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
-        port: 2111
+        port: 22
         script: |
           rm -rf /home/jaja/test-cd-react/*
           exit
