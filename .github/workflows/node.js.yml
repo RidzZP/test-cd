@@ -34,14 +34,14 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          rm -rf /home/jaja/test-cd-react/*
+          mv /home/jaja/test-cd-react/dist/* /home/jaja/test-cd-react/
 
-    - name: Copy build files to server
-      uses: appleboy/scp-action@master
+    - name: Remove dist directory after deployment
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
-        source: "dist/*"
-        target: "/home/jaja/test-cd-react/"
+        script: |
+          rm -rf /home/jaja/test-cd-react/dist
